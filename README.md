@@ -38,7 +38,9 @@ The primary script is found in the `scripts/run.py` file. It is used to run pret
 
 Example usage:
 
+```
 python scripts/run.py <CONFIG_FILE>
+```
 
 For linear evaluation, in the config file, you must provide the exp_dir and checkpoint_name (the file containing the epoch name) for the pretrained model.
 

@@ -8,7 +8,7 @@ Contrastive learning has demonstrated great capability to learn representations 
 
 ### Main Intuition
 
-TODO.
+Learn an extra mapping from input to temperature. Treat this temperature as an uncertainty score. Lower temperature represents more sensitivity to small changes to embedding location whereas higher temperature represents less sensitivity. One can use this simple extension to the contrastive framework for OOD detection.
 
 ## Setup/Installation
 

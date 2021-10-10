@@ -43,7 +43,7 @@ Example usage:
 python scripts/run.py <CONFIG_FILE> --dataset cifar10 --gpu-device 0
 ```
 
-For linear evaluation, in the config file, you must provide the exp_dir and checkpoint_name (the file containing the epoch name) for the pretrained model.
+For linear evaluation, in the config file, you must provide the `exp_dir` and `checkpoint_name` (the file containing the epoch name) for the pretrained model.
 
 ## Citation
 

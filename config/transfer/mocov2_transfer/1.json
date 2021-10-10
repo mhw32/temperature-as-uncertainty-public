@@ -1,0 +1,48 @@
+{
+    "exp_base": null,
+    "exp_name": "mocov2_transfer",
+    "system": "TransferSystem",
+    "cuda": true,
+    "gpu_device": 0,
+    "seed": 1337,
+    "dataset": {
+        "name": null,
+        "num_workers": 8,
+        "two_views": false
+    },
+    "model": {
+        "encoder": {
+            "exp_dir": null,
+            "checkpoint_name": null
+        },
+        "posterior_head": true,
+        "out_dim": 128
+    },
+    "optimizer": {
+        "name": "sgd",
+        "batch_size": 256,
+        "learning_rate": 0.0001,
+        "momentum": 0.9,
+        "weight_decay": 1e-06,
+        "scheduler_type": "cosine",
+        "final_lr": 0.0,
+        "decay_epochs": [
+            60,
+            80
+        ],
+        "gamma": 0.1
+    },
+    "loss": {
+        "t": 0.1,
+        "eps": 1e-06,
+        "posterior": "gaussian",
+        "k": 65536,
+        "m": 0.999
+    },
+    "num_epochs": 100,
+    "validate": false,
+    "copy_checkpoint_freq": 5,
+    "val_check_interval": 500,
+    "limit_val_batches": 10,
+    "continue_from_checkpoint": null
+}

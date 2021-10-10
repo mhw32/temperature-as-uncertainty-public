@@ -1,0 +1,43 @@
+{
+    "exp_base": null,
+    "exp_name": "byol",
+    "system": "Pretrained_TaU_SimCLRSystem",
+    "cuda": true,
+    "gpu_device": 0,
+    "seed": 1337,
+    "dataset": {
+        "name": null,
+        "num_workers": 16,
+        "two_views": true
+    },
+    "model": {
+        "encoder": "byol",
+        "posterior_head": true
+    },
+    "optimizer": {
+        "name": "sgd",
+        "batch_size": 256,
+        "learning_rate": 0.0001,
+        "momentum": 0.9,
+        "weight_decay": 1e-06,
+        "scheduler_type": "cosine",
+        "final_lr": 0.0,
+        "decay_epochs": [
+            60,
+            80
+        ],
+        "gamma": 0.1
+    },
+    "loss": {
+        "t": 0.1,
+        "eps": 1e-06,
+        "simclr_mask": false,
+        "posterior": "gaussian"
+    },
+    "num_epochs": 100,
+    "validate": false,
+    "copy_checkpoint_freq": 5,
+    "val_check_interval": 500,
+    "limit_val_batches": 10,
+    "continue_from_checkpoint": null
+}

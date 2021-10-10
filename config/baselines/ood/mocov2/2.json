@@ -1,0 +1,32 @@
+{
+    "exp_base": null,
+    "exp_name": "mocov2_average_10",
+    "system": "KnnOODEvaluator",
+    "cuda": true,
+    "gpu_device": 0,
+    "seed": 1338,
+    "dataset": {
+        "in_dataset": null,
+        "out_datasets": [
+            "cifar10",
+            "cifar100",
+            "svhn",
+            "tinyimagenet"
+        ],
+        "num_workers": 8,
+        "use_views": false
+    },
+    "model": {
+        "encoder": {
+            "exp_dir": null,
+            "checkpoint_name": null
+        }
+    },
+    "ood_scores": {
+        "nearest_neighbors": 10,
+        "aggregate": "average"
+    },
+    "optimizer": {
+        "batch_size": 128
+    }
+}

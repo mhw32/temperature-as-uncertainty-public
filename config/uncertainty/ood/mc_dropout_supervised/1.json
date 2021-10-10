@@ -1,0 +1,28 @@
+{
+    "exp_base": null,
+    "exp_name": "mc_dropout_supervised_ood",
+    "system": "MCDropoutOODEvaluator",
+    "cuda": true,
+    "gpu_device": 0,
+    "seed": 1337,
+    "dataset": {
+        "in_dataset": null,
+        "out_datasets": [
+            "cifar10",
+            "cifar100",
+            "svhn",
+            "tinyimagenet"
+        ],
+        "num_workers": 8,
+        "use_views": false
+    },
+    "model": {
+        "encoder": {
+            "exp_dir": null,
+            "checkpoint_name": null
+        }
+    },
+    "optimizer": {
+        "batch_size": 128
+    }
+}

@@ -15,16 +15,17 @@ Learn an extra mapping from input to temperature. Treat this temperature as an u
 We use Python 3, PyTorch 1.7.1, PyTorch Lightning 1.1.8, and a conda environment. Consider a variation of the commands below:
 
 ```
-conda create -n tau python=3 anaconda
+conda create -n tau python=3.8.10
 conda activate tau
-conda install pytorch=1.7.1 torchvision -c pytorch
-pip install pytorch-lightning=1.1.8
-pip install tqdm dotmap
+conda install pip
+pip install -r requirements.txt
 ```
 
 ## Data
 
 This repo only contains public data, most of which is found from `torchvision`. For pretrained uncertainty experiments, we utilize [COCO](https://cocodataset.org/#home), [ImageNet](https://www.image-net.org/), [LSUN](https://www.yf.io/p/lsun), and [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html), all of which is public as well but must be downloaded seperately. 
+
+**Before using any datasets, you must specify their location in the file `src/datasets/utils.py`.**
 
 ## Usage
 
@@ -34,12 +35,12 @@ source init_env.sh
 ```
 to add the correct paths to `sys.path` before running anything else.
 
-The primary script is found in the `scripts/run.py` file. It is used to run pretraining and OOD, linear evaluation experiments. You must supply it a configuration file, for which many templates are in the `configs/` folder. These configuration files are not complete, you must supply a experiment base directory (`exp_base`) to point to where in your filesystem model checkpoints will go. You must also supply a `root` directory where data should be downloaded to.
+The primary script is found in the `scripts/run.py` file. It is used to run pretraining and OOD, linear evaluation experiments. You must supply it a configuration file, for which many templates are in the `configs/` folder. These configuration files are not complete, you must supply a experiment base directory (`exp_base`) to point to where in your filesystem model checkpoints will go. You must also supply a `root` directory under `src/datasets/utils.py` where data should be downloaded to. Finally, if the model requires an encoder (e.g., for transfer or ood), you must specify an `exp_dir` and `checkpoint_name`.
 
 Example usage:
 
 ```
-python scripts/run.py <CONFIG_FILE>
+python scripts/run.py <CONFIG_FILE> --dataset cifar10 --gpu-device 0
 ```
 
 For linear evaluation, in the config file, you must provide the exp_dir and checkpoint_name (the file containing the epoch name) for the pretrained model.

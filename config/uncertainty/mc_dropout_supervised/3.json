@@ -1,0 +1,38 @@
+{
+    "exp_base": null,
+    "exp_name": "mc_dropout_supervised",
+    "system": "SupervisedSystem",
+    "cuda": true,
+    "gpu_device": 0,
+    "seed": 1339,
+    "dataset": {
+        "name": null,
+        "num_workers": 8
+    },
+    "model": {
+        "out_dim": 128,
+        "final_bn": true,
+        "base_model": "dp_resnet18",
+        "posterior_head": false
+    },
+    "loss": {
+        "t": 0.1,
+        "eps": 1e-06,
+        "simclr_mask": false
+    },
+    "optimizer": {
+        "name": "adam",
+        "batch_size": 128,
+        "weight_decay": 1e-06,
+        "start_lr": 0,
+        "learning_rate": 0.0001,
+        "final_lr": 0,
+        "warmup_epochs": 10
+    },
+    "num_epochs": 200,
+    "validate": true,
+    "copy_checkpoint_freq": 5,
+    "val_check_interval": 500,
+    "limit_val_batches": 10,
+    "continue_from_checkpoint": null
+}

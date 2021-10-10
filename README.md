@@ -1,6 +1,6 @@
 # Temperature as Uncertainty
 
-A PyTorch implementation of *Temperature as Unceratainty* (ArXiv link to come).
+A PyTorch implementation of *Temperature as Uncertainty in Contrastive Learning* (ArXiv link to come).
 
 ## Abstract 
 

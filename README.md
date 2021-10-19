@@ -1,6 +1,6 @@
 # Temperature as Uncertainty
 
-A PyTorch implementation of *Temperature as Uncertainty in Contrastive Learning* (ArXiv link to come).
+A PyTorch implementation of *Temperature as Uncertainty in Contrastive Learning* [ArXiv](https://arxiv.org/abs/2110.04403).
 
 ## Abstract 
 
@@ -49,4 +49,15 @@ For linear evaluation, in the config file, you must provide the `exp_dir` and `c
 
 If you find this useful for your research, please cite:
 
-TODO.
+```
+@article{
+    zhang2021temperature, 
+    title={Temperature as Uncertainty in Contrastive Learning}, 
+    url={http://arxiv.org/abs/2110.04403}, 
+    note={arXiv: 2110.04403}, 
+    journal={arXiv:2110.04403 [cs]}, 
+    author={Zhang, Oliver and Wu, Mike and Bayrooti, Jasmine and Goodman, Noah}, 
+    year={2021}, 
+    month={Oct}
+}
+```
